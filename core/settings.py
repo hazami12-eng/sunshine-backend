@@ -60,12 +60,7 @@ DATABASES = {
     'default': dj_database_url.parse(
         config('DATABASE_URL'),
         conn_max_age=600,
-        ssl_require=True,
-        options={
-            'connect_timeout': 10,
-            'sslmode': 'require',
-            'application_name': 'django-app',
-        }
+        ssl_require=True   # ensures SSL for Supabase
     )
 }
 
