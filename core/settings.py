@@ -74,6 +74,8 @@ REST_FRAMEWORK = {
     ),
 }
 
+
+
 # ── JWT Settings ─────────────────────────────────────────────────
 from datetime import timedelta
 SIMPLE_JWT = {
@@ -96,6 +98,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')      # your Gmail address
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')  # Gmail app password
+DEFAULT_FROM_EMAIL = config('EMAIL_HOST_USER')
+CONTACT_RECEIVER_EMAIL = 'sales@sunshinemultiplus.com'
 
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'

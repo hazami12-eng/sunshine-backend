@@ -13,3 +13,4 @@ python-decouple==3.8
 python-dotenv==1.2.2
 sqlparse==0.5.5
 tzdata==2026.1
+django-anymail[mailgun]==10.3
